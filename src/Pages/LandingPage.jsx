@@ -1,81 +1,56 @@
 // import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "../../components/components/ui/button";
-// import "../styles/landingPage.css";
+import "../styles/landingPage.css";
 
 import LandingPageNavBar from "../components/LandingPageNavBar";
 import { laptop } from "../images/image";
-import Footer from "../components/Footer"
+import Footer from "../components/Footer";
+
+const numLine = [
+  {
+    num: 1,
+    title: "Create your Profile",
+    text: "Log in to your account if you are a frequent user and if you are a first time user sign up to create your account",
+  },
+  {
+    num: 2,
+    title: "Select your favourite celebrites",
+    text: "Choose the celebrity of your choice.",
+  },
+  {
+    num: 3,
+    title: "Connect with your favourite celebrities",
+    text: "Start connecting with your favourite celebrities, get latest news about the celbritiy of your choice.",
+  },
+];
+
+const testimonials = [
+  {
+    image:
+      "https://s3-alpha-sig.figma.com/img/3d98/9226/0e375e93a2802698664974f94b08c1f3?Expires=1737936000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=UtyYB8EJzZv7z~8RCPWkm5nGIDuNshTShuPI4JOY0D7ayf~vTDNok-gsOeW5Mlx3LWo0LMyoGGYr7Oj8eTs6nBXI3Onf3TSgAI7BbmMLFDqeODLORdusfzNM5Te6bSu7yoiCsq9Ii-QiVXiVIbyb1cphwWjcfjcdwXHZHmv5D8T53cFt6FTWQo4wsJbxmNu9cExbE7sYLqf6ok~wsJ7dLo5iHXI-aNGL-duqoFLKqasd8xFUhy0lcE8oq-dMWFA~SBotDXcwhB9QLDBEpDZroe1zn3-ww2~oJraswQiwwQ2z~RYqMs~8jaR8iNYVN24jlhEQ2U9TBlArY8rV2bGlAw__",
+    starCount: 5,
+    text: "“I never knew it would be a dream come true. I had always desired to connect with Davido because I am his fan. I love his songs and his composure. Through FanConnect I have been able to connect with him and I was able to chat with him.”",
+    name: "-Seyi Adedokun",
+  },
+  {
+    image:
+      "https://s3-alpha-sig.figma.com/img/d8e1/3cf0/aa8e52dbee759610c4b6150b7a297826?Expires=1737936000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=K7uVJSVVWFVXvjQlm4ptKWlY3QyD2axXG7oQUIJUVjrjSl2oApE69qBsFFiWw8xsMISH-iTp~CQB5aGXJggKfn0gefkd8hBqyb05rW8wgcqYye5AWUtdpLYJvamTS3UsWkxqNfLqJ~sGAEBRlF06gGaPimkVVtV32HyoL6zYYYkeKClooMOJT6VOy9Jj2jB~a1ceRKeTqLd78qXL2ZZ8ond4IQDtKfA8HpGVWc1Cw1GORRJV77ItlfDLj33sQ0kdZQwMERalSL7cTvssGcYjyaZ3mKH0jAd34Fx~HmwMHRJDXW13CZ6NaS0rb1XHslOCD2CAA6M9LFiJWVj4jVR52Q__",
+    starCount: 5,
+    text: "“Through FanConnect I was able to connect with Mercy Chinwo my favourite music minister because I am a Christian and whatever I do I must glorify God. She prayed for me through the chats. I was able to keep track of her.” -Amarachi Dike",
+    name: "-Amarachi Dike",
+  },
+  {
+    image:
+      "https://s3-alpha-sig.figma.com/img/5d49/b6e6/ecc1eed0bb0deec2f6470bf6b3b5437b?Expires=1737936000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=iCvZozNu7U~-TrJnqajb-XI91JaJrHvdE2c86POK2~MAqMfpTjmCvgVAl10cTzRUf~SllG8uCbUhl8Clx3j0ijJTaDq3K66pYPfhuVhmoFQ9Ga8qr5G6x~WUFvwukNoYyclhCOsxvnIVfwgfcdH0rMetjj~jXKK-nB5cRkOCvE56nhZdTkGUI4MQuqQCdGhiByRCA7Fxlf6Qo7f3eLWLUFhe9tgDj3DZ1iIuT4Zi54ODGC7mdJAPeMxNH6ZEhyM6~ShzmhLxjBoQRXjf6~N58LhjoriXIz9DS3rvFjRFWndf7NhbglsfJQH8~I0ooFpZxPLh05iKKjyLwAWlNDtYlg__",
+    starCount: 5,
+    text: "“FanConnect is a game changer. It has given me the opportunity to connect with the celebrity of my dreams and I haven’t regretted it. It is user-friendly. I didn’t encounter any issues.”",
+    name: "-Adeleke Idowu",
+  },
+];
 
 const LandingPage = () => {
-  const numLine = [
-    {
-      num: 1,
-      title: "Create your Profile",
-      text: "Log in to your account if you are a frequent user and if you are a first time user sign up to create your account",
-    },
-    {
-      num: 2,
-      title: "Select your favourite celebrites",
-      text: "Choose the celebrity of your choice.",
-    },
-    {
-      num: 3,
-      title: "Connect with your favourite celebrities",
-      text: "Start connecting with your favourite celebrities, get latest news about the celbritiy of your choice.",
-    },
-  ];
-
-  const testimonials = [
-    {
-      image:
-        "https://s3-alpha-sig.figma.com/img/3d98/9226/0e375e93a2802698664974f94b08c1f3?Expires=1737936000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=UtyYB8EJzZv7z~8RCPWkm5nGIDuNshTShuPI4JOY0D7ayf~vTDNok-gsOeW5Mlx3LWo0LMyoGGYr7Oj8eTs6nBXI3Onf3TSgAI7BbmMLFDqeODLORdusfzNM5Te6bSu7yoiCsq9Ii-QiVXiVIbyb1cphwWjcfjcdwXHZHmv5D8T53cFt6FTWQo4wsJbxmNu9cExbE7sYLqf6ok~wsJ7dLo5iHXI-aNGL-duqoFLKqasd8xFUhy0lcE8oq-dMWFA~SBotDXcwhB9QLDBEpDZroe1zn3-ww2~oJraswQiwwQ2z~RYqMs~8jaR8iNYVN24jlhEQ2U9TBlArY8rV2bGlAw__",
-      starCount: 5,
-      text: "“I never knew it would be a dream come true. I had always desired to connect with Davido because I am his fan. I love his songs and his composure. Through FanConnect I have been able to connect with him and I was able to chat with him.”",
-      name: "-Seyi Adedokun",
-    },
-    {
-      image:
-        "https://s3-alpha-sig.figma.com/img/d8e1/3cf0/aa8e52dbee759610c4b6150b7a297826?Expires=1737936000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=K7uVJSVVWFVXvjQlm4ptKWlY3QyD2axXG7oQUIJUVjrjSl2oApE69qBsFFiWw8xsMISH-iTp~CQB5aGXJggKfn0gefkd8hBqyb05rW8wgcqYye5AWUtdpLYJvamTS3UsWkxqNfLqJ~sGAEBRlF06gGaPimkVVtV32HyoL6zYYYkeKClooMOJT6VOy9Jj2jB~a1ceRKeTqLd78qXL2ZZ8ond4IQDtKfA8HpGVWc1Cw1GORRJV77ItlfDLj33sQ0kdZQwMERalSL7cTvssGcYjyaZ3mKH0jAd34Fx~HmwMHRJDXW13CZ6NaS0rb1XHslOCD2CAA6M9LFiJWVj4jVR52Q__",
-      starCount: 5,
-      text: "“Through FanConnect I was able to connect with Mercy Chinwo my favourite music minister because I am a Christian and whatever I do I must glorify God. She prayed for me through the chats. I was able to keep track of her.” -Amarachi Dike",
-      name: "-Amarachi Dike",
-    },
-    {
-      image:
-        "https://s3-alpha-sig.figma.com/img/5d49/b6e6/ecc1eed0bb0deec2f6470bf6b3b5437b?Expires=1737936000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=iCvZozNu7U~-TrJnqajb-XI91JaJrHvdE2c86POK2~MAqMfpTjmCvgVAl10cTzRUf~SllG8uCbUhl8Clx3j0ijJTaDq3K66pYPfhuVhmoFQ9Ga8qr5G6x~WUFvwukNoYyclhCOsxvnIVfwgfcdH0rMetjj~jXKK-nB5cRkOCvE56nhZdTkGUI4MQuqQCdGhiByRCA7Fxlf6Qo7f3eLWLUFhe9tgDj3DZ1iIuT4Zi54ODGC7mdJAPeMxNH6ZEhyM6~ShzmhLxjBoQRXjf6~N58LhjoriXIz9DS3rvFjRFWndf7NhbglsfJQH8~I0ooFpZxPLh05iKKjyLwAWlNDtYlg__",
-      starCount: 5,
-      text: "“FanConnect is a game changer. It has given me the opportunity to connect with the celebrity of my dreams and I haven’t regretted it. It is user-friendly. I didn’t encounter any issues.”",
-      name: "-Adeleke Idowu",
-    },
-  ];
-
   return (
-    // <>
-    //   <Header />
-    //   <div className="landing-container">
-    //     <div className="text-center">
-    //       <div className="slide-up-wrapper">
-    //         <h1 key={currentWordIndex} className="slide-up-text font-bold">
-    //           {words[currentWordIndex]}
-    //         </h1>
-    //       </div>
-    //       <p className="text-2xl mb-8">
-    //         To check your To-do, click below <br />
-    //         👇
-    //       </p>
-    // <Button asChild>
-    //   <Link
-    //     to="/todos"
-    //     className="btn text-blue-900 px-6 py-3 rounded-full text-xl font-semibold hover:text-white transition duration-300"
-    //   >
-    //     View Todos
-    //   </Link>
-    // </Button>
-    //     </div>
-    //   </div>
-    // </>
-
     <>
       <div className="home__screen hero__one">
         <LandingPageNavBar />
@@ -90,7 +65,7 @@ const LandingPage = () => {
           <Button asChild>
             <Link
               to="/choose-account"
-              className="btn text-blue-900 px-6 py-3 rounded-full text-xl font-semibold hover:text-white transition duration-300"
+              className="btn text-black bg-[#00F0FF] px-6 py-3 rounded-full text-xl font-semibold hover:text-white hover:bg-[#00eeffa4] transition duration-300"
             >
               Get Started
             </Link>
