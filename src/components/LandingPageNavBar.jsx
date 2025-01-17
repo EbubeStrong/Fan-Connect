@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
+// import LandingPage from "src/Pages/LandingPage";
 
-const NavBar = () => {
+const LandingPageNavBar = () => {
   return (
     <div className="nav__container">
       <div className="nav__contents">
@@ -28,7 +29,7 @@ const NavBar = () => {
             Sign up
           </Link>
           <Link
-            // to="/todos"
+            to="/login"
             className="btn text-blue-900 px-6 py-3 rounded-full text-xl font-semibold hover:text-white transition duration-300"
           >
             Login
@@ -39,4 +40,4 @@ const NavBar = () => {
   );
 };
 
-export default NavBar;
+export default LandingPageNavBar;

@@ -28,7 +28,7 @@ const AccountPage = () => {
         <nav>
           Existing User?
           <span>
-            <Link to="/">Sign in</Link>
+            <Link to="/sign-in">Sign in</Link>
           </span>
         </nav>
       </div>
@@ -51,7 +51,20 @@ const AccountPage = () => {
                 <div className="image__button flex justify-between">
                   <img src={accountTab.image} alt="photo" />
 
-                  <Link to="/">Arrow</Link>
+                  <Link to="/Home">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      style={{
+                        fill: "rgb(0, 0, 0)",
+                        "--darkreader-inline-fill": "#e8e6e3",
+                      }}
+                    >
+                      <path d="m11.293 17.293 1.414 1.414L19.414 12l-6.707-6.707-1.414 1.414L15.586 11H6v2h9.586z"></path>
+                    </svg>
+                  </Link>
                 </div>
               </div>
             );

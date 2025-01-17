@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Button } from "../../components/components/ui/button";
 // import "../styles/landingPage.css";
 
-import NavBar from "../components/NavBar";
+import LandingPageNavBar from "../components/LandingPageNavBar";
 import { laptop } from "../images/image";
 import Footer from "../components/Footer"
 
@@ -78,7 +78,7 @@ const LandingPage = () => {
 
     <>
       <div className="home__screen hero__one">
-        <NavBar />
+        <LandingPageNavBar />
 
         <div className="hero__one">
           <h1>
