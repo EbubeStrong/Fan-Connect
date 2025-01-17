@@ -1,8 +1,7 @@
 .nav__container {
-  background: transparent;
   margin: 0 auto 80px auto;
-  border: 1px solid #ffffff67;
-  max-width: 800px;
+  border: 1px solid #ffffff1a;
+  max-width: 960px;
   position: relative;
 }
 
