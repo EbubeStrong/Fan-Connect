@@ -113,7 +113,7 @@ const LandingPage = () => {
 
           <Button asChild>
             <Link
-              // to="/todos"
+              to="/"
               className="btn text-blue-900 px-6 py-3 rounded-full text-xl font-semibold hover:text-white transition duration-300"
             >
               Learn More
