@@ -6,6 +6,7 @@ import "../styles/landingPage.css";
 import LandingPageNavBar from "../components/LandingPageNavBar";
 import { laptop } from "../images/image";
 import Footer from "../components/Footer";
+import { vectorImage } from "../images/image";
 
 const numLine = [
   {
@@ -43,7 +44,7 @@ const testimonials = [
   {
     image:
       "https://s3-alpha-sig.figma.com/img/5d49/b6e6/ecc1eed0bb0deec2f6470bf6b3b5437b?Expires=1737936000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=iCvZozNu7U~-TrJnqajb-XI91JaJrHvdE2c86POK2~MAqMfpTjmCvgVAl10cTzRUf~SllG8uCbUhl8Clx3j0ijJTaDq3K66pYPfhuVhmoFQ9Ga8qr5G6x~WUFvwukNoYyclhCOsxvnIVfwgfcdH0rMetjj~jXKK-nB5cRkOCvE56nhZdTkGUI4MQuqQCdGhiByRCA7Fxlf6Qo7f3eLWLUFhe9tgDj3DZ1iIuT4Zi54ODGC7mdJAPeMxNH6ZEhyM6~ShzmhLxjBoQRXjf6~N58LhjoriXIz9DS3rvFjRFWndf7NhbglsfJQH8~I0ooFpZxPLh05iKKjyLwAWlNDtYlg__",
-    starCount: 5,
+    starCount: 4,
     text: "“FanConnect is a game changer. It has given me the opportunity to connect with the celebrity of my dreams and I haven’t regretted it. It is user-friendly. I didn’t encounter any issues.”",
     name: "-Adeleke Idowu",
   },
@@ -175,8 +176,8 @@ const LandingPage = () => {
         </div>
       </div>
 
-      <div className="hero__four">
-        <h2>How it works</h2>
+      <div className="hero__four mx-auto py-8 px-7">
+        <h2 className="title">How it works</h2>
 
         <div className="image__text__content flex gap-9 items-center">
           <div className="image__content">
@@ -186,7 +187,10 @@ const LandingPage = () => {
           <div className="text__content pt-10">
             {numLine.map((word, index) => {
               return (
-                <div className="num-text flex gap-5 mb-4" key={index}>
+                <div
+                  className="num-text flex gap-5 text-white mb-4"
+                  key={index}
+                >
                   <div
                     className="num__line flex flex-col
                   justify-center items-center "
@@ -196,75 +200,87 @@ const LandingPage = () => {
                     </div>
 
                     {index !== numLine.length - 1 && (
-                      <div className="line bg-red-100 w-[5px] h-[100px]"></div>
+                      <div className="line bg-red-100 w-[1px] h-[100px]"></div>
                     )}
                   </div>
 
                   <div className="texts-content">
-                    <h2 className="text-title mb-2">{word.title}</h2>
+                    <h2 className="text__title mb-2">{word.title}</h2>
                     <p className="mb-4">{word.text}</p>
                   </div>
                 </div>
               );
             })}
+            <Button asChild>
+              <Link
+                to="/login"
+                className="btn text-black bg-[#00F0FF] px-7 py-1 text-xl font-semibold hover:text-white hover:bg-[#00eeffa4] transition duration-300 ml-10 cursor-pointer"
+              >
+                Login Now
+              </Link>
+            </Button>
           </div>
         </div>
 
-        <div className="vector__image__one"></div>
+        <div className="vector__image__one">
+          <img src={vectorImage} alt="" />
+        </div>
       </div>
 
-      <div className="testimonial__content">
-        <h2>Let’s hear from our users</h2>
+      <div className="testimonial__content text-white">
+        <h2>Let's hear from our users</h2>
 
-        <div className="testimonial__image__text__content">
+        <div className="testimonial__image__text__content flex justify-between gap-10 px-3 items-center">
           {testimonials.map((testimonial, index) => {
             return (
-              <div key={index} className="testimonial__image__text">
+              <div key={index} className="testimonial__image__text text-white">
                 <div className="image">
                   <img src={testimonial.image} alt="photo" />
                 </div>
 
-                {/* Star Rating */}
-                <div className="star__rating flex gap-1">
-                  {[...Array(5)].map((_, i) =>
-                    i < testimonial.starCount ? ( // Render full stars
-                      <svg
-                        key={i}
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 20 20"
-                        fill="gold"
-                        stroke="gold"
-                        className="w-5 h-5"
-                      >
-                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                      </svg>
-                    ) : (
-                      // Render last empty star for 4-star testimonials
-                      <svg
-                        key={i}
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="gold"
-                        className="w-5 h-5"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"
-                        />
-                      </svg>
-                    )
-                  )}
-                </div>
+                <div className="testimonial__div">
+                  {/* Star Rating */}
+                  <div className="star__rating flex gap-1">
+                    {[...Array(5)].map((_, i) =>
+                      i < testimonial.starCount ? ( // Render full stars
+                        <svg
+                          key={i}
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 20 20"
+                          fill="gold"
+                          stroke="gold"
+                          className="w-5 h-5"
+                        >
+                          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                      ) : (
+                        // Render last empty star for 4-star testimonials
+                        <svg
+                          key={i}
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="gold"
+                          className="w-5 h-5"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"
+                          />
+                        </svg>
+                      )
+                    )}
+                  </div>
 
-                <div className="testimonial__text">
-                  <p>{testimonial.text}</p>
-                </div>
+                  <div className="testimonial__text">
+                    <p>{testimonial.text}</p>
+                  </div>
 
-                <div className="testimonial__name">
-                  <h3>{testimonial.name}</h3>
+                  <div className="testimonial__name">
+                    <h3>{testimonial.name}</h3>
+                  </div>
                 </div>
               </div>
             );
