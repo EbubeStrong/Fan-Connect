@@ -55,7 +55,7 @@ const SignupPage = () => {
   }, []);
 
   return (
-    <div className="signup__container pt-20 pb-30 w-full h-screen flex items-start bg-gray-900">
+    <div className="signup__container pt-20 pb-30 px-10 w-full h-screen flex items-start bg-white">
       {/* Image Container */}
       {/* <div className="image__container w-1/2 relative h-screen overflow-hidden">
         {SignUpContents.map((content, index) => (
