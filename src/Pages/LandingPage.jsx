@@ -73,14 +73,14 @@ const LandingPage = () => {
         </div>
       </div>
 
-      <div className="hero__two flex">
+      <div className="hero__two flex items-center">
         <div className="content__one">
           <h2>
             Celebrities get <br />
             to be monitized
           </h2>
 
-          <p>
+          <p className="text-white">
             FanConnect is designed to help celebrities monetize their fanbase
             through subscription, <br />
             virtual meet-and-greets, and event tickets.
@@ -89,7 +89,7 @@ const LandingPage = () => {
           <Button asChild>
             <Link
               to="/"
-              className="btn text-blue-900 px-6 py-3 rounded-full text-xl font-semibold hover:text-white transition duration-300"
+              className="btn text-black bg-[#00F0FF] px-6 py-3 rounded-full text-xl font-semibold hover:text-white hover:bg-[#00eeffa4] transition duration-300"
             >
               Learn More
             </Link>
@@ -98,15 +98,15 @@ const LandingPage = () => {
 
         <div className="content__two ">
           <img
-            className="w-[760px]"
+            // className="w-[760px]"
             src="https://s3-alpha-sig.figma.com/img/9a28/ab0a/1b7eceb4027421a185266169c21623a5?Expires=1737936000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=FAVo9miWlRpEa4Du5mTjfyYe0mqD83VcEFNx4VJy6qHfYGdXNAQ~k0jvow9xBrg3S-FIUzc59P4ViDDgEUGt-hrJZhqQWHTt9KT19ZhYHG66uwaASV1tzfRyjxT9DDajqMNCnzQ6SIwGoTJ7dQpn42n67NRtTA2RTwVDBw7vdPbzrMES31j9RSKBcOh4B9ut~Vts8VZpA6YCF-vf5YGVB-kF4OingIj882ar7Dft8hX3VLxKwX-WBFR~Q-JlAi8pyaPaEHHZtaXmVUtLGoaRj5C6ryQC~8fJ2r3JuLB29g~m17NjAhtQsdGS4L6zsETwj6tA2rVud7ppWzYgucJGlA__"
             alt="money"
           />
         </div>
       </div>
 
-      <div className="hero__three">
-        <h2>
+      <div className="hero__three mx-auto py-7">
+        <h2 className="">
           Get the latest news of <br />
           your favourite celebrities
         </h2>
@@ -117,7 +117,7 @@ const LandingPage = () => {
         </p>
 
         <div className="celeb__images__container flex items-center gap-7 px-5">
-          <div className="images__content flex items-center gap-6 mb-4">
+          <div className="images__content flex items-center gap-6 mb-7">
             <div className="image">
               <img
                 className="w-[235px] h-[239px]"
