@@ -26,7 +26,7 @@ const HomePage = () => {
             </div>
 
             <div className="name__content">
-              <p>Promise Nwankwo</p>
+              <p>Promise Samuel Anita Eesha</p>
             </div>
 
             <div className="image__profile">
@@ -56,12 +56,17 @@ const HomePage = () => {
 
           <div className="search__boxes__container">
             <div className="search__box">
-              <span>{search_icon}</span>
+              <span>
+                {/* {search_icon} */}
+
+              </span>
               <input type="text" />
             </div>
 
             <div className="search__box">
-              <span>{icon}</span>
+              <span>
+                {/* {icon} */}
+                </span>
               <input type="text" />
 
               <Button asChild>Search</Button>
@@ -70,7 +75,7 @@ const HomePage = () => {
         </div>
       </div>
 
-      
+
     </div>
   );
 };
