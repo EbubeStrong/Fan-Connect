@@ -1,6 +1,6 @@
 export {default as laptop} from "./laptop.png"
 export {default as vectorImage} from "./Vector 2.png"
-export {default as vectorImageTwo} from "./Vector 3.jpg"
+export {default as vectorImageTwo} from "./Vector_3.png"
 export { default as burnaboy } from "./burnaboy.png"
 export {default as kolaboy} from "./kolaboy.png"
 export { default as portable } from "./portable.png"
