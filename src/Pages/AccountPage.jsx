@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import "../styles/accountPage.css"
 const AccountPage = () => {
   const accountTabs = [
     {
@@ -23,33 +24,74 @@ const AccountPage = () => {
   const colors = ["red", "#ffebcd", "#98fb98"];
 
   return (
-    <>
-      <div className="nav__link">
-        <nav>
+    <div
+      className="flex flex-col items-center justify-center"
+      style={{
+        height: "100vh",
+        position: "relative",
+        backgroundColor: "#BEDAFF",
+      }}
+    >
+      <div
+        className="nav__link"
+        style={{ position: "absolute", top: "20px", right: "30px" }}
+      >
+        <nav className="flex gap-1" style={{ color: "#082552" }}>
           Existing User?
-          <span>
+          <span className="signIn"
+          >
             <Link to="/sign-in">Sign in</Link>
           </span>
         </nav>
       </div>
 
-      <h1>Choose an account type</h1>
+      <h1
+        style={{
+          fontFamily: "Roboto",
+          fontSize: "51px",
+          fontWeight: "700",
+          lineHeight: "63.7px",
+          letterSpacing: "-2.5px",
+          textAlign: "center",
+          marginBottom: "30px",
+          color: "#082552",
+        }}
+      >
+        Choose an account type
+      </h1>
 
       <div className="account__container">
-        <div className="account__content">
-                  {accountTabs.map((accountTab, index) => {
-               const bgColor = colors[index % colors.length];
+        <div className="account__content flex gap-7 px-10">
+          {accountTabs.map((accountTab, index) => {
+            const bgColor = colors[index % colors.length];
             return (
               <div
                 key={index}
-                className="account__image__text"
-                style={{ backgroundColor: bgColor }}
+                className="account__image__text flex flex-col justify-between py-0"
+                style={{
+                  backgroundColor: bgColor,
+                  width: "100%",
+                  position: "relative",
+                }}
               >
-                <h3>{accountTab.title}</h3>
-                <p>{accountTab.text}</p>
+                <div
+                  className="text-white"
+                  // style={{postion: "absolute", top: "0"}}
+                >
+                  <h3>{accountTab.title}</h3>
+                  <p>{accountTab.text}</p>
+                </div>
 
-                <div className="image__button flex justify-between">
-                  <img src={accountTab.image} alt="photo" />
+                <div className="image__button flex justify-between items-end ">
+                  <img
+                    src={accountTab.image}
+                    alt="photo"
+                    style={{
+                      width: "185px",
+                      height: "262px",
+                      borderRadius: "10px 0px 0px 0px",
+                    }}
+                  />
 
                   <Link to="/Home">
                     <svg
@@ -71,7 +113,7 @@ const AccountPage = () => {
           })}
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
