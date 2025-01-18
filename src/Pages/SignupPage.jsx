@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { burnaboy, kolaboy, portable, wizkid } from "../images/image";
+import { burnaboy, kolaboy,  wizkid } from "../images/image";
 import { Button } from "../../components/components/ui/button";
 import axios from "axios";
 
@@ -31,7 +31,8 @@ const SignUpContents = [
       "Stay closer to your fans like never before! Share live event updates, exclusive content, and personalized alerts directly with your audience. Connect effortlessly, keep your fans engaged, and make every moment unforgettable—all while ensuring a secure and seamless experience.",
   },
   {
-    image: portable,
+    image:
+      "https://s3-alpha-sig.figma.com/img/9c78/c207/552fc98b77c1e3551faa847116459330?Expires=1737936000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=OX1k2kyHaFfGgcSp474bJNyefAID295X2nBg~KDZ5BX2El1t3pMP6e4WZYcU5y5I-KS71Wv5Hnik1Ude4SJjbdnZsrv88vNIfKC2MnaxurwWkiDnHLU8ZwAyyFTv5uAFUbPCiqv5zn8K69Rs0oYpnzW3skBHrlWkARbOxu~I2WpYnQBEAWK-BHEw9PiwNOPCL1CWvoSRndS~onM2inCGqcObhvu~U-L7CVfQ~EOfZxC-z1K6Wkvw2LT0keDgmXU4qTY5ITEDS7Gnq9hAIXNmb9pZSxbT9mXgFfux2I76QAzZhSHfeDKh0XYZE2Zq3R0AgV1YE6uuLgenNuxfjqODkQ__",
     title:
       "Experience the thrill of millions of live events, personalized alerts for your favorite artists, teams, and shows, all backed by safe and secure ticketing. Stay in the loop, discover unforgettable moments, and enjoy effortless, worry-free ticketing every time.",
   },
@@ -109,17 +110,20 @@ const SignupPage = () => {
 
   return (
     <div
-      className="signup__container pt-20 pb-30 px-10 w-full flex items-end"
+      className="signup__container pt-20 pb-30 px-10 w-full flex items-center overflow-hidden"
       style={{ backgroundColor: "rgba(157, 216, 240, 0.801)" }}
     >
-      <div className="image__container w-1/2 px-7 h-screen relative overflow-hidden">
+      <div className="image__container w-1/2 px-7 h-screen relative mt-7"
+        style={{height: "60vh"}}
+      >
         {SignUpContents.map((content, index) => (
           <img
             key={index}
             src={content.image}
-            className={`absolute top-0 left-0 w-full h-full object-contain transition-opacity duration-1000 ${
+            className={`absolute top-0 left-0 w-full  object-contain transition-opacity duration-1000 ${
               index === currentIndex ? "opacity-100" : "opacity-0"
-            }`}
+              }`}
+            style={{ height: "min-content"}}
             alt="Signup Background"
           />
         ))}

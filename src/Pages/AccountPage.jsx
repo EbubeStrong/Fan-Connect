@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import "../styles/accountPage.css"
+import "../styles/accountPage.css";
 const AccountPage = () => {
   const accountTabs = [
     {
@@ -21,7 +21,8 @@ const AccountPage = () => {
         "https://s3-alpha-sig.figma.com/img/30f8/e33c/54fbbf42603f0248dafe64ac6e4c9948?Expires=1737936000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=ICfVTv0CJs-DG5t15Y2VNmha1kgsg0vzkH8QvbjE-eq7xgWT-VRgdrt~cguTJoaE-QpdZZAMdh5Il7cMUDBdz9kxPRb9SE8sPuEyJn7VHhXo3f9kxfcaff6teCq3dm5NjO6ij6e92i-6~a2dWgfFninmqSmYYHcZnSu6FiTUhA4KwPQtEZeIxBDw1I~bqBkSeuMjvh9AylDjxC3QtOjEvVtfXHuNQs~u4SAv117h6CkaQH~aPP4eunpxlI3aXGQd0mIR~ymdWgHO~AoOYVgrlFHtUmYLYb4CIsAHr05pIK775CcYxYe-v5fs8rj5mnoLcEHyATc4BnrOYt1IS9OsTQ__",
     },
   ];
-  const colors = ["red", "#ffebcd", "#98fb98"];
+  const bgColors = ["#0066F5", "#082552", "#ECFBEC"];
+  const colors = ["#fff", "#fff", "#082552"];
 
   return (
     <div
@@ -38,9 +39,8 @@ const AccountPage = () => {
       >
         <nav className="flex gap-1" style={{ color: "#082552" }}>
           Existing User?
-          <span className="signIn"
-          >
-            <Link to="/sign-in">Sign in</Link>
+          <span className="signIn">
+            <Link to="/login">Sign in</Link>
           </span>
         </nav>
       </div>
@@ -53,7 +53,8 @@ const AccountPage = () => {
           lineHeight: "63.7px",
           letterSpacing: "-2.5px",
           textAlign: "center",
-          marginBottom: "30px",
+          marginTop: "2rem",
+          marginBottom: "2rem",
           color: "#082552",
         }}
       >
@@ -63,7 +64,8 @@ const AccountPage = () => {
       <div className="account__container">
         <div className="account__content flex gap-7 px-10">
           {accountTabs.map((accountTab, index) => {
-            const bgColor = colors[index % colors.length];
+            const bgColor = bgColors[index % bgColors.length];
+            const color = colors[index % colors.length];
             return (
               <div
                 key={index}
@@ -75,11 +77,11 @@ const AccountPage = () => {
                 }}
               >
                 <div
-                  className="text-white"
-                  // style={{postion: "absolute", top: "0"}}
+                  className=" px-5 mb-7 mt-10"
+                  style={{ textAlign: "center", color: color, width: "100%" }}
                 >
-                  <h3>{accountTab.title}</h3>
-                  <p>{accountTab.text}</p>
+                  <h3 className="mb-4">{accountTab.title}</h3>
+                  <p style={{ width: "100%", maxWidth: "300px" }}>{accountTab.text}</p>
                 </div>
 
                 <div className="image__button flex justify-between items-end ">
@@ -92,21 +94,33 @@ const AccountPage = () => {
                       borderRadius: "10px 0px 0px 0px",
                     }}
                   />
-
-                  <Link to="/Home">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
+                  <div
+                    className="flex items-center px-4"
+                    style={{ height: "40%" }}
+                  >
+                    <div
                       style={{
-                        fill: "rgb(0, 0, 0)",
-                        "--darkreader-inline-fill": "#e8e6e3",
+                        backgroundColor: "#0E397C4D",
+                        padding: "5px",
+                        borderRadius: "50%",
                       }}
                     >
-                      <path d="m11.293 17.293 1.414 1.414L19.414 12l-6.707-6.707-1.414 1.414L15.586 11H6v2h9.586z"></path>
-                    </svg>
-                  </Link>
+                      <Link to="/sign-in">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          style={{
+                            fill: "rgb(255, 255, 255)",
+                            "--darkreader-inline-fill": "#e8e6e3",
+                          }}
+                        >
+                          <path d="m11.293 17.293 1.414 1.414L19.414 12l-6.707-6.707-1.414 1.414L15.586 11H6v2h9.586z"></path>
+                        </svg>
+                      </Link>
+                    </div>
+                  </div>
                 </div>
               </div>
             );
